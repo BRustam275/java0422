@@ -4,18 +4,18 @@ import java.util.Arrays;
 
 public class FillDiagonal {
     public static void main(String[] args) {
-
-        int[][] a = new int[6][6];
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < a.length; j++) {
+        int n = 5;
+        int[][] a = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
                 if (i == j){
                     a[i][j] = 1;
                 }else {
                     a[i][j] = 0;
+                    a[i][n - i -1] = 1;
                 }
             }
             System.out.println(Arrays.toString(a[i]));
         }
-
     }
 }
