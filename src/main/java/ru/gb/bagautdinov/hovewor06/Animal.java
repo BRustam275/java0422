@@ -1,42 +1,42 @@
 package ru.gb.bagautdinov.hovewor06;
 
-public class Animal {
+public abstract class Animal {
     private String name;
-    private int run;
-    private int toSail;
+    private int runLimit;
+    private int swimLimit;
+    private static int count;
 
-    public Animal(String name, int run, int toSail) {
+
+    public Animal(String name, int runLimit, int swimLimit) {
         this.name = name;
-        this.run = run;
-        this.toSail = toSail;
+        this.runLimit = runLimit;
+        this.swimLimit = swimLimit;
+        count++;
+    }
+
+    public void run(int length) {
+        if(length <= runLimit){
+            System.out.println(this + " пробежал " + length + " метров");
+        }else {
+            System.out.println(this + " не может пробежать " + length + " метров");
+        }
+    }
+
+    public void swim(int length) {
+        if(length <= swimLimit){
+            System.out.println(this + " проплыл " + length + " метров");
+        }else {
+            System.out.println(this + " не может проплыть " + length + " метров");
+        }
+
+    }
+
+    public static int getCount() {
+        return count;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getRun() {
-        return run;
-    }
-
-    public void setRun(int run) {
-        this.run = run;
-    }
-
-    public int getToSail() {
-        return toSail;
-    }
-
-    public void setToSail(int toSail) {
-        this.toSail = toSail;
-    }
-
-    public void print() {
-        System.out.println();
-
-    }
 }

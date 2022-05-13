@@ -2,13 +2,27 @@ package ru.gb.bagautdinov.hovewor06;
 
 public class Cat extends Animal {
 
+    private static final int RUN_LIMIT = 200;
+    private static final int SWIM_LIMIT = 0;
+    private static int count;
 
-    public Cat(String name, int run, int toSail) {
-        super(name, run, toSail);
+    public Cat(String name) {
+        super(name, RUN_LIMIT, SWIM_LIMIT);
+        count++;
     }
 
 
-    public void print() {
-        System.out.println("Name: " + getName() + " пробежала: " + getRun()+ "м. проплыла:" + getToSail());
+    @Override
+    public void swim(int length) {
+            System.out.println(this + " не умеет плавать");
+    }
+
+    @Override
+    public String toString() {
+        return "Кот по имени " + getName();
+    }
+
+    public static int getCount() {
+        return count;
     }
 }
