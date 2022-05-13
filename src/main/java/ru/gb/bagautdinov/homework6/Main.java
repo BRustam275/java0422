@@ -1,9 +1,5 @@
 package ru.gb.bagautdinov.homework6;
 
-import ru.gb.bagautdinov.hovewor06.Animal;
-import ru.gb.bagautdinov.hovewor06.Cat;
-import ru.gb.bagautdinov.hovewor06.Dog;
-
 import java.util.Random;
 
 public class Main {
